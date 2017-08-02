@@ -3,7 +3,7 @@ var app = angular.module("myApp", []);
 
 app.controller('firstCtrl', function($scope, $http){
 
-  $scope.searchTerm = "Search";
+  $scope.searchTerm = "";
 
   var submitKey =
 

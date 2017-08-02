@@ -2,31 +2,38 @@
 <html>
   <head>
     <title>Angular App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" src="style.css">
   </head>
-  <body ng-app="myApp">
-    <div ng-controller="firstCtrl">
-      <input
-      class="form-control"
-      ng-model="searchTerm"
-      >
-
-      <button
-      type="button"
-      name="button"
-      class="btn btn-danger"
-      ng-click="apiCall(searchTerm)"
-      >Get Topic</button>
-
-      <ul>
-        <li ng-repeat="data in successArr">
-          {{data.headline}}
-        </li>
-      </ul>
-    </div>
+  <body ng-app="myApp" style="text-align: center">
+    <nav ng-controller="firstCtrl" class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <!-- add header -->
+        <h1> A Simple Article Title Search</h1>
+        <!-- add menu -->
+        <div class="collapse navbar-collapse" id="navbar1">
+          <!-- add search form -->
+          <form class="navbar-form navbar-right" role="search">
+            <div class="input-group">
+              <input type="text" ng-model="searchTerm" class="form-control">
+              <br>
+              <br>
+              <span class="input-group-btn">
+                <button type="submit" ng-click="apiCall(searchTerm)" class="btn btn-default btn-lg">Search</button>
+              </span>
+            </div>
+          </form>
+          <ul>
+            <li ng-repeat="data in successArr">
+              {{data.headline.main}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   <script src="app.js"></script>
   </body>
 </html>
