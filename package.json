@@ -2,7 +2,7 @@
   "name": "ng-class",
   "version": "1.0.0",
   "engine": {
-    "node": "8.2.1",
+    "node": "8.2.1"
   },
   "description": "",
   "main": "app.js",
